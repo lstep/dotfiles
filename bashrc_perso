@@ -1,0 +1,22 @@
+# Personal BASHRC
+
+alias ll='ls -alF'
+
+shopt -s checkwinsize # Auto recognizing window size
+shopt -s histappend # Don't overwrite HISTFILE
+shopt -s no_empty_cmd_completion # Don't complete when empty line
+shopt -u hostcomplete # Don't complete hostname
+shopt -u sourcepath # Don't search PATH for `source'
+
+HISTSIZE=50000 # History size at runtime
+HISTCONTROL=ignoredups
+HISTFILESIZE=$HISTSIZE # History size to save
+HISTIGNORE='&: *'
+
+source ~/.nvim/plugged/gruvbox/gruvbox_256palette.sh
+
+# Go related
+export GOPATH=$HOME/go
+
+export PATH=$PATH:$GOPATH/bin
+
