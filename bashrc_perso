@@ -1,6 +1,5 @@
 # Personal BASHRC
 
-alias ll='ls -alF'
 
 shopt -s checkwinsize # Auto recognizing window size
 shopt -s histappend # Don't overwrite HISTFILE
@@ -14,6 +13,16 @@ HISTFILESIZE=$HISTSIZE # History size to save
 HISTIGNORE='&: *'
 
 source ~/.nvim/plugged/gruvbox/gruvbox_256palette.sh
+
+# Useful aliases
+alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias ll='ls -alF'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset — %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative'
+# Jump to github from your repository
+alias github='xdg-open `git config -l | sed -rn "s^remote.origin.url=git(@|://)(github.com)(:|/)(.+/.+).git^https://\2/\4^p"`'
+
+source ~/dotfiles/git_prompt.sh
+source ~/dotfiles/git_completion.sh
 
 # Go related
 export GOPATH=$HOME/go

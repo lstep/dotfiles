@@ -2,7 +2,10 @@
 #
 # vim:syntax=sh:sw=4:ts=4:expandtab
 
+# Go related
+# Get and install from https://godeb.s3.amazonaws.com/godeb-amd64.tar.gz or https://godeb.s3.amazonaws.com/godeb-386.tar.gz
 mkdir ~/go
+
 ln -s ~/dotfiles/dot.nvim ~/.nvim
 ln -s ~/dotfiles/nvimrc ~/.nvim/.nvimrc
 
@@ -17,3 +20,9 @@ sudo apt-get install python-dev python-pip
 sudo pip install neovim
 
 echo "source ~/dotfiles/bashrc_perso" >> ~/.bashrc
+
+ln -s ~/dotfiles/dot.inputrc ~/.inputrc
+ln -s ~/dotfiles/dot.screenrc ~/.screenrc
+
+# GIT related
+ln -s ~/dotfiles/dot.git ~/.git

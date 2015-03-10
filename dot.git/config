@@ -1,0 +1,60 @@
+[branch]
+	autosetupmerge = true
+	autosetuprebase = always
+
+[alias]
+# http://git.or.cz/gitwiki/Aliases
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+	df = diff
+	dlc = diff --cached HEAD^
+
+	lig = log -p
+	glp = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	dl = "!git ll -1"
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+	who = shortlog -s --
+
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+	rh = reset --hard
+	rh1 = reset HEAD^ --hard
+	rh2 = reset HEAD^^ --hard
+
+	done = "!f() { git branch | grep "$1" | cut -c 3- | grep -v done | xargs -I{} git branch -m {} done-{}; }; f"
+	gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
+
+    serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+
+[user]
+	name = Luc Stepniewski (Home)
+	email = luc@stepniewski.fr
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+	ui = always
+[core]
+    excludesfile = /home/lstep/.cvsignore
+	editor = vim
+
+[github]
+	user = lstep
+	token = fdee245cf454f82ffe0442a22af56ed5
+[merge]
+	tool = vimdiff
+[push]
+	default = matching
