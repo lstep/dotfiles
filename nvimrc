@@ -79,6 +79,7 @@ if has("autocmd")
         au BufNewFile *.py   silent! 0r ~/.nvim/skel/python
         au BufNewFile *.rb   silent! 0r ~/.nvim/skel/ruby
         au BufNewFile *.html silent! 0r ~/.nvim/skel/html
+        au BufNewFile *.go silent! 0r ~/.nvim/skel/go
         au BufNewFile *.c,*.cc,*.cxx,*.cpp silent! 0r ~/.nvim/skel/cc
         au BufNewFile *.h,*.hh,*.hxx,*.hpp silent! 0r ~/.nvim/skel/hh
     augroup end
