@@ -14,7 +14,7 @@ curl -fLo ~/.nvim/autoload/plug.vim --create-dirs \
 
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt-get install neovim
+sudo apt-get install neovim exuberant-ctags
 
 sudo apt-get install python-dev python-pip
 sudo pip install neovim
@@ -26,3 +26,5 @@ ln -s ~/dotfiles/dot.screenrc ~/.screenrc
 
 # GIT related
 ln -s ~/dotfiles/dot.git ~/.git
+
+echo  "Don't forget to :PlugInstall and then :GoInstallBinaries in nvim"
