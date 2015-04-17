@@ -4,6 +4,7 @@
 
 [alias]
 # http://git.or.cz/gitwiki/Aliases
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
     st = status
     ci = commit
     br = branch
@@ -53,7 +54,7 @@
 
 [github]
 	user = lstep
-	token = fdee245cf454f82ffe0442a22af56ed5
+	token = XXXX
 [merge]
 	tool = vimdiff
 [push]
