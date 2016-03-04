@@ -8,8 +8,9 @@ mkdir ~/go
 
 ln -s ~/dotfiles/dot.nvim ~/.nvim
 ln -s ~/dotfiles/nvimrc ~/.nvim/nvimrc
+ln -s ~/dotfiles/dotconfig_nvim ~/.config/nvim
 
-curl -fLo ~/.nvim/autoload/plug.vim --create-dirs \
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 sudo add-apt-repository ppa:neovim-ppa/unstable
